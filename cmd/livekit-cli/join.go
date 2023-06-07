@@ -179,6 +179,11 @@ func publishFile(room *lksdk.Room, filename string, fps float64) error {
 	pub, err = room.LocalParticipant.PublishTrack(track, &lksdk.TrackPublicationOptions{
 		Name: filename,
 	})
+
+	sid := pub.SID()
+	fmt.Println("SID:", sid)
+
+
 	return err
 }
 
